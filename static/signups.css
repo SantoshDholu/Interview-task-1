@@ -1,0 +1,133 @@
+.signup-container{
+    height: 800px;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/static/signupbackground.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.signup{
+    height: 700px;
+    width: 30%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.signup h3{
+    color: black;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 30px;
+}
+#signup-form input[type='text'], select{
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    padding: 20px;
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: gray;
+}
+#signup-form input[type='email'], select{
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    padding: 20px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: gray;
+}
+#signup-form input[type='date'], select{
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    padding: 20px;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: gray;
+}
+#signup-form .signup-pass input[type='password'], select{
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    padding: 20px;
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: gray;
+}
+#signup-form .signup-confimepass input[type='password'], select{
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    padding: 20px;
+    position: absolute;
+    top: 76%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: gray;
+}
+.signup-form a button{
+    width: 80%;
+    height: 50px;
+    font-size: 20px;
+    position: absolute;
+    top: 91%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    border: none;
+    background-color: black;
+    color: white;
+}
+.signup-form a button:hover{
+    background-color: orangered;
+}
+.signup-username label{
+    color: gray;
+    position: absolute;
+    top: 22%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+.signup-email label{
+    color: gray;
+    position: absolute;
+    top: 34%;
+    left: 24%;
+    transform: translate(-50%, -50%);
+}
+.signup-date label{
+    color: gray;
+    position: absolute;
+    top: 46%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+.signup-pass label{
+    color: gray;
+    position: absolute;
+    top: 58%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+.signup-confimepass label{
+    color: gray;
+    position: absolute;
+    top: 70%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+}
+.signup-form .already-member{
+    color: gray;
+    margin-top: 460px;
+    text-align: center;
+}

@@ -1,0 +1,43 @@
+{% extends 'master.html' %}
+
+{% block title %}Feedback{% endblock title %}
+
+{% block body %}
+<div class="feedback-container">
+    <h2>Welcome to Santosh Dholu</h2>
+    <h3>Submit a your feedback to our Support Team</h3>
+        <div class="feedback-form">
+            <div class="feedback-inputfield">
+                <h4>What Can We Help You With?</h4>
+                <form action="/edit/{{Feedback.id}}" method="POST">
+                    {% csrf_token %}
+                <div class="input-row">
+                    <div class="first-name">
+                        <Label>First Name*</Label>
+                        <input type="text" name="first_name" id='first_name' value='{{Feedback.first_name}}' placeholder="First Name" required>
+                    </div>
+                    <div class="last-name">
+                        <Label>Last Name*</Label>
+                        <input type="text" name="last_name" id='last_name' value='{{Feedback.last_name}}' placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="feedback-email">
+                    <label>Email Address*</label>
+                    <input type="email" name="feedbackemail" id='feedbackemail' value='{{Feedback.feedbackemail}}' placeholder="Email Address" required>
+                </div><br>
+                <div class="feedback-subject">
+                    <label>Subject(Option)</label>
+                    <input type="text" name="subject" id='subject' value='{{Feedback.subject}}' placeholder="Subject">
+                </div><br>
+                <div class="feedback">
+                    <label>Feedback*</label>
+                    <textarea type='textarea' name='feedback_1' id='feedback_1'  value='{{Feedback.feedback_1}}' rows='5' cols='156' placeholder='Feedback'
+                        required></textarea>
+                </div><br>
+                <a href=""><button>Update</button></a>
+            </form>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock body %}

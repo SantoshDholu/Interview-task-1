@@ -1,0 +1,87 @@
+.feedback-container{
+    height: 1000px;
+    position: relative;
+}
+.feedback-container h2{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 40px;
+}
+.feedback-container h3{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+.feedback-form{
+    height: 700px;
+    width: 80%;
+    background-color: rgb(219, 219, 219);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+}
+.feedback-form h4{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+.feedback-inputfield{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.feedback-inputfield .input-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.input-row input[type='text'], select{
+    height: 40px;
+    width: 585px;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+}
+.feedback-email input[type='email'], select{
+    height: 40px;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+}
+.feedback-subject input[type='text'], select{
+    height: 40px;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+}
+textarea[type='textarea'], select{
+    /* width: 100%; */
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+}
+.feedback-form a button{
+    height: 40px;
+    width: 150px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+}
+.feedback-form a button:hover{
+    background-color: orangered;
+}

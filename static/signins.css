@@ -1,0 +1,91 @@
+.signin-container{
+    height: 600px;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/static/signinbackground.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.signin{
+    height: 500px;
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 2px 3px 3px gray;
+}
+.signin h3{
+    color: black;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 30px;
+}
+#signin-form input[type='text'], select{
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    padding: 20px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: gray;
+}
+#signin-form input[type='password'], select{
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    padding: 20px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: gray;
+}
+.form{
+    padding: 10px;
+}
+.form #user{
+    color: gray;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+.form #pass{
+    color: gray;
+    position: absolute;
+    top: 45%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+.form #forget-pass{
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+}
+.form a button{
+    width: 80%;
+    height: 50px;
+    font-size: 20px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    border: none;
+    background-color: black;
+    color: white;
+}
+.form a button:hover{
+    background-color: orangered;
+}
+.form .member{
+    color: gray;
+    margin-top: 360px;
+    margin-left: 32%;
+}

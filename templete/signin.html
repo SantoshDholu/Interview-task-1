@@ -1,0 +1,27 @@
+{% extends 'master.html' %}
+
+{% block title %}Sign in{% endblock title %}
+
+{% block body %}
+<div class="signin-container">
+    <div class="signin">
+        <h3>SIGN IN HERE</h3>
+        <form action="" method="" id='signin-form'>
+            <div class="form">
+                <label id='user'>Username</label>
+                <div class="username">
+                    <input type="text" name='username' placeholder="Username" required>
+                </div>
+                <label id='pass'>Password</label>
+                <div class="password">
+                    <input type="password" name='password' placeholder="Password" required>
+                </div>
+                <a href="" id='forget-pass'>Forgotten your password?</a>
+                <!-- <p class='agree'>By loggi in, you agree to WhiteSpaceIndia <a href="">Privacy Policy</a> and <a href="">Terms of Use</a>.</p> -->
+                <a href=""><button>Log In</button></a>
+                <p class="member">Not a Member? <a href="/signup">Sign Us</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock body %}
