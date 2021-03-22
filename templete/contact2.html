@@ -1,0 +1,57 @@
+{% extends 'master.html' %}
+
+{% block title %}Feedback{% endblock title %}
+
+{% block body %}
+<form action="/editcontact/{{Contactus.id}}" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="contactemail" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="contactemail" name='contactemail' value='{{Contactus.contactemail}}' placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="fname" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="fname" name='fname' value='{{Contactus.fname}}' placeholder="Fisrt Name">
+    </div>
+    <div class="mb-3">
+        <label for="lname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lname" name='lname' value='{{Contactus.lname}}' placeholder="Last Name">
+    </div>
+    <a href=""><button class='submit'>Update</button></a>
+</form>
+<div class="container">
+    {{i.first_name}}
+    {{i.last_name}}
+    {{i.feedbackemail}}
+    {{i.subject}}
+    {{i.feedback}}
+<div class="table-container">
+<h3>All Contact</h3>
+<em>Total: {{Messagess | length}}</em>
+<table class="table">
+    <thead class='thead-dark'>
+        <tr>
+            <th scope="col">SNo.</th>
+            <th scope="col">Email</th>
+            <th scope="col">Fisrt Name</th>
+            <th scope="col">Last Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in Messagess %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.contactemail}}</td>
+            <td>{{i.fname}}</td>
+            <td>{{i.lname}}</td>
+            <td>{{i.date_add1}}</td>
+            <td>
+                <a href=""><button>Update</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+</div>
+{% endblock body %}

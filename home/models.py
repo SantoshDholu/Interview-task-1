@@ -19,7 +19,7 @@ class Feedback(models.Model):
     last_name = models.CharField(max_length=50)
     feedbackemail = models.CharField(max_length=50)
     subject = models.CharField(max_length=100)
-    feedback_1 = models.TextField()
+    feedback = models.Field()
     date_add = models.DateField()
     class Meta:
         db_table="feedback"
@@ -27,3 +27,14 @@ class Feedback(models.Model):
     def __str__(self):
         return self.first_name
 
+class Contactus(models.Model):
+    contactemail = models.CharField(max_length=50)
+    fname = models.CharField(max_length=50)
+    lname = models.CharField(max_length=50)
+    date_add1 = models.DateField()
+
+    class Meta:
+        db_table="contact"
+
+    def __str__(self):
+        return self.fname

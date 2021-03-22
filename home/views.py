@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from home.models import Signup
 from home.models import Feedback
+from home.models import Contactus
 from datetime import datetime
 from home.forms import feedbackform
+from home.forms import contactform
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
@@ -68,6 +70,18 @@ def signout(request):
 
     return HttpResponse('404 - Not Found')
 
+def contact(request):
+    all_data_contact = Contactus.objects.all()
+    if request.method == "POST":
+        contactemail = request.POST.get('contactemail')
+        fname = request.POST.get('fname')
+        lname = request.POST.get('lname')
+        data1 = Contactus(contactemail=contactemail, fname=fname, lname=lname, date_add1= datetime.today())
+        data1.save()
+        return render(request, 'contact.html', {'Messagess':all_data_contact})
+    return render(request, 'contact.html', {'Messagess':all_data_contact})
+
+
 def feedback(request):
     all_data = Feedback.objects.all()
     # print(all_data)
@@ -76,8 +90,8 @@ def feedback(request):
         last_name = request.POST.get('last_name')
         feedbackemail = request.POST.get('feedbackemail')
         subject = request.POST.get('subject')
-        feedback_1= request.POST.get('feedback_1')
-        data = Feedback(first_name=first_name, last_name=last_name, feedbackemail=feedbackemail, subject=subject, feedback_1=feedback_1, date_add= datetime.today())
+        feedback= request.POST.get('feedback')
+        data = Feedback(first_name=first_name, last_name=last_name, feedbackemail=feedbackemail, subject=subject, feedback=feedback, date_add= datetime.today())
         data.save()
         messages.success(request, 'Your message has been sent.')
         return render(request, 'feedback.html', {'Messages':all_data})
@@ -100,3 +114,21 @@ def edit(request, id):
         messages.success(request, 'Your Feedback is updated.')
         return render(request, 'feedback2.html', {'Feedback':result})
     return redirect('/feedback')
+
+def deletecontact(request, id):
+    userdata1 = Contactus.objects.get(id=id)
+    userdata1.delete()
+    return redirect('/contact')
+
+def updatecontact(request, id):
+    userdata1 = Contactus.objects.get(id=id)
+    return render(request, 'contact2.html', {'Contactus':userdata1})
+
+def editcontact(request, id):
+    result1 = Contactus.objects.get(id=id)
+    form1 = contactform(request.POST, instance=result1)
+    if form1.is_valid():
+        form1.save()
+        messages.success(request, 'Your Contact is updated.')
+        return render(request, 'contact2.html', {'Contactus':result1})
+    return redirect('/contact')
